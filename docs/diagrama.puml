@@ -1,0 +1,21 @@
+@startuml k
+class Humano
+class Foco
+class EstadoFoco
+{
+    -EstadoFoco estado
+    +Encender()
+    +Apagar()
+    +EstadoFoco: MostrarEstado()
+}
+class Serie
+{
+    -Foco focos [10]
+    +Encender()
+    +Apagar()
+}
+Humano o-- Foco
+Humano o-- Serie
+EstadoFoco *-- Foco
+Serie "1" *-- "10" Foco
+@enduml
